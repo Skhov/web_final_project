@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Admin LTE</title>
+  <title>My Project Admin LTE</title>
  
 
   <!-- Font Awesome Icons -->
@@ -16,6 +16,21 @@
   <link rel="stylesheet" href="../css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+<!--/// -->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous">
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- DataTables -->
+<link rel="stylesheet" href="../css/dataTables.bootstrap4.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../css/adminlte.min.css">
+<!-- Google Font: Source Sans Pro -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+<!--///-->
 
 
 
@@ -370,7 +385,7 @@ to get the desired effect
         </div>
     </div>
 </div>
-<table class="table table-hover">
+<table id="example1" class="table table-hover">
     <thead>
         <tr>
             <th scope="col">ID</th>
@@ -457,7 +472,7 @@ to get the desired effect
             content +=
                 `
                 <tr>
-                    <td class="ID"><a href="article-detail.html?id=">${a.ID}</a></td>
+                    <td class="ID"><a href="article-detail.html">${a.ID}</a></td>
                     <td class="t">${a.TITLE}</td>
                     <td class="d">${a.DESCRIPTION}</td>
                     <td><img class="img-thumbnail" src=${a.IMAGE} /></td>
@@ -491,7 +506,7 @@ to get the desired effect
         })
     }
     }
- // show detail
+ // by Khov
     function showDataDetail(btn) {
         let id = $(btn).parents('tr').find('.ID').text()
         $.ajax({
@@ -568,8 +583,6 @@ to get the desired effect
     }
 
 
- 
-
 </script>
 
   <!-- Top -->
@@ -594,6 +607,45 @@ to get the desired effect
     
 </div>
 
+
+<!-- Pagiantion-->
+
+<script src="../js/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <script src="../js/jquery.dataTables.js"></script>
+    <script src="../js/dataTables.bootstrap4.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../js/adminlte.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+          $('#example1').DataTable({
+              "ajax": {
+                  "url": "http://api-ams.me/v1/api/articles?page=1&limit=150",
+                  "dataSrc": "DATA"
+              },
+              "columns": [{
+                      "data": "ID"
+                  },
+                  {
+                      "data": "TITLE"
+                  },
+                  {
+                      "data": "DESCRIPTION"
+                  },
+                  {
+                      "data": "CREATED_DATE"
+                  },
+                  {
+              
+                      "data": "AUTHOR.NAME"
+                  }
+              ]
+          })
+      })
+  </script>
 
 <!-- SAR KHOV-->
 <!-- 
