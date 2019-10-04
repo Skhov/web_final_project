@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="../css/sweetalert2.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="../css/toastr.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <style>
+    .hide{
+      display: none;
+    }
+    .show{
+      width: 30px;
+      height: 30px;
+      background-color: green;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      display: block;
+    }
+  </style>
+  </head>
+<body>
+    <div class="wrapper">
+            <div class="row">
+                    <div class="col-12">
+                      <div class="card">
+                        <div class="card-header">
+                          <!-- <h3 class="card-title">Responsive Hover Table</h3> -->
+                          <button type="button" class="btn btn-primary" data-toggle="modal" id="showModal">
+                            Add New Record
+                          </button>
+                          <div class="card-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                              <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+          
+                              <div class="input-group-append">
+                                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0">
+                          <table class="table table-hover">
+                            <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>TITLE</th>
+                              <th>DESCRIPTION</th>
+                              <th>IMAGE</th>
+                              <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                            
+                          </table>
+                        </div>
+                        <!-- /.card-body -->
+                      </div>
+                      <!-- /.card -->
+                    </div>
+                  </div>
+    </div>
+
+ 
+
+    <div id="top" class="hide" onclick="goToTop()">
+      top
+    </div>
+<script src="../js/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../js/bootstrap.bundle.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="../js/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="../js/toastr.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../js/adminlte.min.js"></script>
+<script src="../js/crud.js"></script>
+<!-- <script src="../js/reques.js"></script> -->
+
+<script>
+  $(window).scroll(function(){
+      if ($(window).scrollTop() > 150){
+        $('#top').addClass('show');
+        $('#top').removeClass('hide')
+      }else{
+        $('#top').addClass('hide');
+        $('#top').removeClass('show')
+      }
+  })
+  function goToTop(){
+    $(window).scrollTop(0)
+  }
+</script>
+
+ 
+
+</body>
+</html>
